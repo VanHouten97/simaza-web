@@ -1,0 +1,18 @@
+<div class="horizontal-scroll">
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th></th>
+      <th>Aedes Aegypti</th>
+      <th>Aedes Albopictus</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in breateu">
+      <td>{{item.data}}</td>
+      <td style="background-color: {{getColor(item.aegypti)}}; color: #000">{{item.aegypti}}</td>
+      <td style="background-color: {{getColor(item.albopictus)}}; color: #000">{{item.albopictus}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

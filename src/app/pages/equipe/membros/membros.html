@@ -1,0 +1,28 @@
+<div class="horizontal-scroll">
+  <table class="table table-condensed">
+    <thead>
+    <tr>
+      <th class="table-id">#</th>
+      <th>Nome</th>
+      <th>Nascimento</th>
+      <th>Telefone</th>
+      <th>Celular</th>
+      <th>E-mail</th>
+      <th>Matricula</th>
+      <th>Foto</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in membros">
+      <td class="table-id">{{$index + 1}}</td>
+      <td>{{item.nome}}</td>
+      <td>{{item.nascimento}}</td>
+      <td>{{item.telefone}}</td>
+      <td>{{item.celular}}</td>
+      <td><a href="mailto:{{item.email}}">{{item.email}}</a></td>
+      <td>{{item.matricula}}</td>
+      <td><img ng-src="{{item.foto}}" style="width: 200px; height: 200px; border-radius: 100px; margin-top: 15px"></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,153 @@
+<div class="widgets">
+    <div class="row">
+        <div class="col-md-12">
+            <div ba-panel ba-panel-title="Assistente - Adcionar Usuários" ba-panel-class="with-scroll">
+                <ba-wizard>
+                    <ba-wizard-step title="Informações Iniciais" form="informacoesinciais">
+                        <form name="informacoesinciais" novalidate>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group has-feedback">
+                                        <label for="username">Nome Completo</label>
+                                        <input type="text" ng-model='user.fullname' class="form-control" id="username" name="username" placeholder="Nome Completo" required>
+                                        <span class="help-block error-block basic-block">Preencha o campo</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Endereço de e-mail</label>
+                                        <input type="email" ng-model='user.email'class="form-control" id="email" name="email" placeholder="Email" required>
+                                        <span class="help-block error-block basic-block">Endereço de e-mail inválido</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="senha">Senha</label>
+                                        <input type="password" ng-model='user.password' class="form-control" id="senha" name="senha" placeholder="Senha" required>
+                                        <span class="help-block error-block basic-block">Digite a senha</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="confirmacaosenha">Confirme a senha</label>
+                                        <input type="password" ng-model='user.csenha'class="form-control" id="confirmacaosenha" name="confirmacaosenha" placeholder="Confirme a senha" required>
+                                        <span class="help-block error-block basic-block">Senhas digitadas inválidas</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </ba-wizard-step>
+                    <ba-wizard-step title="Informações Pessoais" form="informacoesPessoais">
+                        <form name="informacoesPessoais" novalidate>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label for="CPF">CPF</label>
+                                        <input type="text" ng-model='user.cpf' class="form-control" id="CPF" name="CPF" placeholder="CPF" required>
+                                        <span class="help-block error-block basic-block">Preenchar o campo</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="matricula">Matrícula</label>
+                                        <input type="text" ng-model='user.registry' class="form-control" id="matricula" name="matricula" placeholder="Matrícula" required>
+                                        <span class="help-block error-block basic-block">Preenchar o campo</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="nickname">Nome de exibição</label>
+                                        <input type="text" ng-model='user.nickname' class="form-control" id="nickname" name="nickname" placeholder="Nome de Exibição" required>
+                                        <span class="help-block error-block basic-block">Preenchar o campo</span>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label for="adm">Data Admissão</label>
+                                        <input type="text" ng-model='user.admission' ng-change='teste()' class="form-control" id="adm" name="adm" placeholder="01/01/2001" required>
+                                        <span class="help-block error-block basic-block">Preenchar o campo</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="aniversarios">Data de Aniversário</label>
+                                        <input type="text" ng-model='user.birth' class="form-control" id="aniversarios" name="aniversarios" placeholder="01/01/2001" required>
+                                        <span class="help-block error-block basic-block">Preenchar o campo</span>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label for="productName">Cargo/Função</label>
+                                            <select class="form-control" ng-model='user.role' title="cargo" selectpicker>
+                                                <option selected value=''></option>
+                                                <option value='0'>Supervisor de Saúde</option>
+                                                <option value='1'>Supervisor de Endemias</option>
+                                                <option value='2'>Supervisor de Zoonoses</option>
+                                                <option value='3'>Agente de Saúde</option>
+                                                <option value='4'>Agente de Endemias</option>
+                                                <option value='5'>Agente de Zoonoses</option>
+                                            </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label for="productName">Genêro</label>
+                                            <select class="form-control" ng-model='user.gender'title="genero" selectpicker>
+                                                <option selected></option>
+                                                <option value='0'>Homem</option>
+                                                <option value='1'>Mulher</option>
+                                            </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="telefone">Telefone</label>
+                                        <input type="text" ng-model='user.mobile' class="form-control" id="telefone" name="telefone" placeholder="Telefone celular" required>
+                                        <span class="help-block error-block basic-block">Preenchar o campo</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </ba-wizard-step>
+                    <ba-wizard-step title="Informações Residênciais"  form="addressForm">
+                        <form name="addressForm" novalidate>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label for="productName">Estado</label>
+                                        <input type="text" ng-model='user.state' class="form-control" id="estado" name="estado" placeholder="Estado" required>
+                                        <span class="help-block error-block basic-block">Preencher campos</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="productName">Cidade</label>
+                                        <input type="text" ng-model='user.city' class="form-control" id="cidade" name="cidade" placeholder="Cidade" required>
+                                        <span class="help-block error-block basic-block">Preencher campos</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group has-feedback">
+                                        <label for="productName">Bairro</label>
+                                        <input type="text" ng-model='user.district' class="form-control" id="bairro" name="bairro" placeholder="Bairro" required>
+                                        <span class="help-block error-block basic-block">Preencher campos</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="productName">CEP</label>
+                                        <input type="text" ng-model='user.zip' class="form-control" id="CEP" name="CEP" placeholder="CEP" required>
+                                        <span class="help-block error-block basic-block">Preencher campos</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group has-feedback">
+                                        <label for="productName">Logradouro</label>
+                                        <input type="text" ng-model='user.street' class="form-control" id="rua" name="rua" placeholder="Logradouro" required>
+                                        <span class="help-block error-block basic-block">Preencher campos</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="productName">Número do Imóvel</label>
+                                        <input type="text" ng-model='user.address'class="form-control" id="numero" name="numero" placeholder="Número" required>
+                                        <span class="help-block error-block basic-block">Preencher campos</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </ba-wizard-step>
+                    <ba-wizard-step title="Informações Complementares">
+                        <form class="form-horizontal" name="finishForm" novalidate>
+                            Confirmar dados do Usuário e salvar no sistema SIMAZE?
+                            <div class="col-sm-2 col-xs-4"><button type="button" ng-click='confirmar()' class="btn btn-primary">Cadastrar</button></div>
+                        </form>
+                    </ba-wizard-step>
+                </ba-wizard>
+            </div>
+        </div>
+    </div>
+</div>
