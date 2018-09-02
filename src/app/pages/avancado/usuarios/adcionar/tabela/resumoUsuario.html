@@ -1,0 +1,59 @@
+<div class="row">
+    <div class="col-md-4">
+        <li>
+        <label><strong>Nome:</strong></label>
+            <br><td>{{user.fullname}}</td></br>
+        </li>
+        <li>
+        <label><strong>Endereço de e-mail:</strong></label>
+            <br><td>{{user.email}}</td></br>
+        </li>
+        <li>
+        <label><strong>Nome de Exibição:</strong></label>
+            <br><td>{{user.nickname}}</td></br>
+        </li>
+        <li>
+        <label><strong>CPF:</strong></label>
+            <br><td>{{user.cpf}}</td></br>
+        </li>
+    </div>
+
+    <div class="col-md-4">
+        <li>
+        <label><strong>Genêro:</strong></label>
+            <br><td>{{user.gender}}</td></br>
+        </li>
+        <li>
+        <label><strong>Data de Nascimento:</strong></label>
+            <br><td>{{user.birth}}</td></br>
+        </li>
+        <li>
+        <label><strong>Telefone:</strong></label>
+            <br><td>{{user.mobile}}</td></br>
+        </li>
+        <li>
+        <label><strong>Matrícula:</strong></label>
+            <br><td>{{user.registry}}</td></br>
+        </li>
+    </div>
+
+    <div class="col-md-4">
+        <li>
+        <label><strong>Cargo:</strong></label>
+            <br><td>{{user.role}}</td></br>
+        </li>
+        <li>
+        <label><strong>Data de Admissão:</strong></label>
+            <br><td>{{user.admission}}</td></br>
+        </li>
+        <li>
+        <label><strong>Endereço:</strong></label>
+            <br><td>{{user.state}}</td>, <td>{{user.city}}</td>, <td>{{user.zip}}</td></br>
+            <br><td>{{user.district}}</td>, <td>{{user.street}}</td>, <td>{{user.address}}</td>, <td>{{user.complement}}</td></br>
+        </li>
+    </div>
+</div>
+
+<div class="row" style="vertical-align: 70px">
+        <div style="margin-top: 10px; margin-left: 105px" type="button" ng-click='confirmar()'><button style="width: 885px" class="btn btn-success">Cadastrar</button></div>
+</div>
