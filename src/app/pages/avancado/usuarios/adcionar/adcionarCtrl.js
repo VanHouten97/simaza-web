@@ -23,12 +23,12 @@
           });
       };
 
-      $scope.teste = function() {
+      $scope.replaceData = function() {
           if ($scope.user.admission.length === 2) {
-              $scope.user.admission = o + '/';
+              $scope.user.admission = $scope.user.admission + '/';
           }
           if ($scope.user.admission.length === 5) {
-              $scope.user.admission = o + '/';
+              $scope.user.admission = $scope.user.admission + '/';
           }
       };
 
